@@ -1,12 +1,16 @@
-// Zapper Server
-// In Node.
-
-// Name and port of the NEXT server come from the command line.
-NEXT_SERVER_NAME = process.argv[2] || "EOL";
-NEXT_SERVER_PORT = process.argv[3] || "EOL";
+/* 
+ * MYOB Latency Zapper Server for node.js.
+ *
+ * Usage: node zapapp.js <local_port_number> <next_server_name> <next_server_port>
+ *
+ */
 
 // Current port of this server
-SERVER_PORT = process.argv[4] || 8000; // to allow running multiple server on the same machine.
+SERVER_PORT = process.env.SERVER_PORT || 8000; // to allow running multiple server on the same machine.
+
+// Name and port of the NEXT server come from the command line. EOL=End of the line
+NEXT_SERVER_NAME = process.env.NEXT_SERVER_NAME || "EOL";
+NEXT_SERVER_PORT = process.env.NEXT_SERVER_PORT || "EOL";
 
 // Load the http module to create an http server.
 var express = require('express');
