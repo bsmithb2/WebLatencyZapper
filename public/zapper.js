@@ -41,6 +41,7 @@
 			var time2 = new Date().getTime() - result.startTime;
 			results += title  + ": " + time2 + " milliseconds</br>";
 			$("#result").html(results); 
+			//ga.event("sin|bay", small|med|large, 
 			run += 1;
 			zapRun();
 		});
